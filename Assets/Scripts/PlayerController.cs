@@ -9,6 +9,17 @@ public class PlayerController : MonoBehaviour
     private bool m_RecivingInput = true;
     private bool m_CanMove = false;
     private float m_Speed = 20f;
+    private Material m_PlayerMat;
+    private List<Transform> m_WalkedTiles = new List<Transform>();
+    private bool m_IsLevelFinished = false;
+
+    private GameManager m_GameManager;
+
+    private void Awake()
+    {
+        m_PlayerMat = GetComponent<MeshRenderer>().material;
+        m_GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+    }
 
     private void Update()
     {
@@ -81,5 +92,36 @@ public class PlayerController : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    private bool LevelFinished()
+    {
+        if (GameManager.TilesCount == m_WalkedTiles.Count)
+        {
+            m_GameManager.OnLevelFinished?.Invoke();
+            return true;
+        }
+        return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Tile"))
+        {
+            if (!m_WalkedTiles.Contains(other.transform))
+            {
+                m_WalkedTiles.Add(other.transform);
+                other.GetComponent<MeshRenderer>().material = m_PlayerMat;
+            }
+
+            if(!m_IsLevelFinished)
+            {
+                m_IsLevelFinished = LevelFinished();
+                if (m_IsLevelFinished)
+                {
+                    Debug.Log("LevelFinished");
+                }
+            }
+        }
     }
 }
