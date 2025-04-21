@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour
     private bool m_RecivingInput = true;
     private bool m_CanMove = false;
     private float m_Speed = 20f;
+    private Material m_PlayerMat;
+
+    private void Awake()
+    {
+        m_PlayerMat = GetComponent<MeshRenderer>().material;
+    }
 
     private void Update()
     {
@@ -81,5 +87,13 @@ public class PlayerController : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Tile"))
+        {
+            other.GetComponent<MeshRenderer>().material = m_PlayerMat;
+        }
     }
 }
