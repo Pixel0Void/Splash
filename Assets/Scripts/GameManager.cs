@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        LoadGame();
+        OnLevelFinished.AddListener(SaveGame);
         InitialLevel(m_CurrentLevel);
     }
 
@@ -47,5 +49,15 @@ public class GameManager : MonoBehaviour
         Destroy(m_PlayerClone);
         Destroy(m_LevelClone);
         InitialLevel(CurrentLevel);
+    }
+
+    private void SaveGame()
+    {
+        PlayerPrefs.SetInt("CurrentLevel", m_CurrentLevel + 1);
+    }
+
+    private void LoadGame()
+    {
+        m_CurrentLevel = PlayerPrefs.GetInt("CurrentLevel");
     }
 }
