@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject PlayerPrefab;
     public List<Transform> Levels = new List<Transform>();
+    public UnityEvent OnLevelFinished;
+
     private int m_CurrentLevel = 0;
+    public int CurrentLevel => m_CurrentLevel;
 
     private GameObject m_PlayerClone;
     private PlayerController m_PlayerController;
@@ -18,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        InitialLevel(13);
+        InitialLevel(m_CurrentLevel);
     }
 
     private void InitialLevel(int index)
@@ -32,5 +36,16 @@ public class GameManager : MonoBehaviour
 
         m_LevelTiles = m_LevelClone.GetComponentsInChildren<Transform>().Where(t => t.name.Contains("Tile")).ToList();
         TilesCount = m_LevelTiles.Count;
+    }
+
+    public void MoveToNextLevel()
+    {
+        if (m_CurrentLevel < Levels.Count - 1)
+            ++m_CurrentLevel;
+        else
+            m_CurrentLevel = 0;
+        Destroy(m_PlayerClone);
+        Destroy(m_LevelClone);
+        InitialLevel(CurrentLevel);
     }
 }

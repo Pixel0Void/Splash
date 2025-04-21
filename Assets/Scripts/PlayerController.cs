@@ -13,9 +13,12 @@ public class PlayerController : MonoBehaviour
     private List<Transform> m_WalkedTiles = new List<Transform>();
     private bool m_IsLevelFinished = false;
 
+    private GameManager m_GameManager;
+
     private void Awake()
     {
         m_PlayerMat = GetComponent<MeshRenderer>().material;
+        m_GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     private void Update()
@@ -95,6 +98,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.TilesCount == m_WalkedTiles.Count)
         {
+            m_GameManager.OnLevelFinished?.Invoke();
             return true;
         }
         return false;
@@ -114,7 +118,9 @@ public class PlayerController : MonoBehaviour
             {
                 m_IsLevelFinished = LevelFinished();
                 if (m_IsLevelFinished)
+                {
                     Debug.Log("LevelFinished");
+                }
             }
         }
     }
