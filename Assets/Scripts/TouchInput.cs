@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Touch : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class TouchInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IInputHandler
 {
     private Vector2 m_StartPosition;
     private Vector2 m_EndPosition;
 
-    [SerializeField] private Vector3 m_Direction;
+    private Vector3 m_Direction;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -19,6 +19,11 @@ public class Touch : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         m_EndPosition = eventData.position;
         CalculateDirection();
+    }
+
+    public void RestValues()
+    {
+        m_Direction = Vector3.zero;
     }
 
     private void CalculateDirection()
@@ -47,5 +52,10 @@ public class Touch : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 m_Direction = Vector3.back;
             }
         }
+    }
+
+    public Vector3 SetDirection()
+    {
+        return m_Direction;
     }
 }
