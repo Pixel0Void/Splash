@@ -15,17 +15,20 @@ public class PlayerController : MonoBehaviour
 
     private GameManager m_GameManager;
     private SoundManager m_SoundManager;
+    private IInputHandler m_Input;
 
     private void Awake()
     {
         m_PlayerMat = GetComponent<MeshRenderer>().material;
         m_GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         m_SoundManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundManager>();
+
+        m_Input = m_GameManager.InputHandler;
     }
 
     private void Update()
     {
-        if(m_RecivingInput == false && m_CanMove)
+        if (m_RecivingInput == false && m_CanMove)
         {
             Move();
         }
@@ -35,9 +38,9 @@ public class PlayerController : MonoBehaviour
     private bool GetTargetPosition(out Vector3 targetPos)
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, m_Direction, out hit,100f))
+        if (Physics.Raycast(transform.position, m_Direction, out hit, 100f))
         {
-            if(hit.transform.CompareTag("Wall"))
+            if (hit.transform.CompareTag("Wall"))
             {
                 targetPos = hit.transform.position;
                 return true;
@@ -49,35 +52,11 @@ public class PlayerController : MonoBehaviour
 
     private void SetDirection()
     {
-        if(m_RecivingInput)
+        if (m_RecivingInput)
         {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                m_Direction = Vector3.left;
-                m_CanMove = GetTargetPosition(out m_TargetPosition);
-                m_RecivingInput = !m_CanMove;
-            }
-
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                m_Direction = Vector3.forward;
-                m_CanMove = GetTargetPosition(out m_TargetPosition);
-                m_RecivingInput = !m_CanMove;
-            }
-
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                m_Direction = Vector3.right;
-                m_CanMove = GetTargetPosition(out m_TargetPosition);
-                m_RecivingInput = !m_CanMove;
-            }
-
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                m_Direction = Vector3.back;
-                m_CanMove = GetTargetPosition(out m_TargetPosition);
-                m_RecivingInput = !m_CanMove;
-            }
+            m_Direction = m_Input.SetDirection();
+            m_CanMove = GetTargetPosition(out m_TargetPosition);
+            m_RecivingInput = !m_CanMove;
         }
     }
 
@@ -89,9 +68,10 @@ public class PlayerController : MonoBehaviour
 
     private bool Arrived()
     {
-        if(transform.position == m_TargetPosition - m_Direction)
+        if (transform.position == m_TargetPosition - m_Direction)
         {
             m_SoundManager.Triggered();
+            m_GameManager.TouchInput.RestValues();
             return true;
         }
         return false;
@@ -109,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Tile"))
+        if (other.CompareTag("Tile"))
         {
             if (!m_WalkedTiles.Contains(other.transform))
             {
@@ -117,7 +97,7 @@ public class PlayerController : MonoBehaviour
                 other.GetComponent<MeshRenderer>().material = m_PlayerMat;
             }
 
-            if(!m_IsLevelFinished)
+            if (!m_IsLevelFinished)
             {
                 m_IsLevelFinished = LevelFinished();
                 if (m_IsLevelFinished)

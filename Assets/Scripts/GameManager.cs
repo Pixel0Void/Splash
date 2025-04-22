@@ -7,9 +7,19 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    public enum InputTypeEnum
+    {
+        Touch, Keyboard
+    }
+
+    public InputTypeEnum InputType;
+    public IInputHandler InputHandler;
+
     public GameObject PlayerPrefab;
     public List<Level> Levels = new List<Level>();
     public GameObject FinishLevelPanel;
+    public TouchInput TouchInput;
+    public KeyboardInput KeyboardInput;
     public UnityEvent OnLevelFinished;
 
     private int m_CurrentLevel = 0;
@@ -27,6 +37,17 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         m_SoundManager = GetComponent<SoundManager>();
+        switch (InputType)
+        {
+            case InputTypeEnum.Touch:
+                InputHandler = TouchInput;
+                break;
+            case InputTypeEnum.Keyboard:
+                InputHandler = KeyboardInput;
+                break;
+            default: 
+                goto case InputTypeEnum.Keyboard;
+        }
     }
 
     private void Start()
