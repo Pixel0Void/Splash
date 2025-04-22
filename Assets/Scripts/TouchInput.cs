@@ -20,7 +20,7 @@ public class TouchInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
             CalculateDirection();
     }
 
-    public void RestValues()
+    public void ResetValues()
     {
         m_Direction = Vector3.zero;
     }
