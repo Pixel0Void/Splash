@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
         if (m_GameManager.TilesCount == m_WalkedTiles.Count)
         {
             m_GameManager.OnLevelFinished?.Invoke();
+            m_CanMove = false;
             return true;
         }
         return false;
