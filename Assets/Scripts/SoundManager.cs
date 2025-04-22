@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     private AudioSource m_AudioSource;
 
     public AudioClip CompleteLevelAudio;
+    public AudioClip TriggerAudio;
 
     private void Awake()
     {
@@ -17,6 +18,11 @@ public class SoundManager : MonoBehaviour
     public void LevelCompleted()
     {
         PlayAudio(CompleteLevelAudio);
+    }
+
+    public void Triggered()
+    {
+        PlayAudio(TriggerAudio);
     }
 
     private void PlayAudio(AudioClip audioClip)

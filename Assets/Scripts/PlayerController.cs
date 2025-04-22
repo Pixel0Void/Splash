@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     private bool m_IsLevelFinished = false;
 
     private GameManager m_GameManager;
+    private SoundManager m_SoundManager;
 
     private void Awake()
     {
         m_PlayerMat = GetComponent<MeshRenderer>().material;
         m_GameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        m_SoundManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<SoundManager>();
     }
 
     private void Update()
@@ -89,6 +91,7 @@ public class PlayerController : MonoBehaviour
     {
         if(transform.position == m_TargetPosition - m_Direction)
         {
+            m_SoundManager.Triggered();
             return true;
         }
         return false;
