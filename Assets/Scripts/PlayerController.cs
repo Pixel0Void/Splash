@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     private bool LevelFinished()
     {
-        if (GameManager.TilesCount == m_WalkedTiles.Count)
+        if (m_GameManager.TilesCount == m_WalkedTiles.Count)
         {
             m_GameManager.OnLevelFinished?.Invoke();
             return true;

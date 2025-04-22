@@ -4,16 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public static int LargeLevelSize = 15;
-    public static int SmallLevelSize = 7;
-
-    public static void LargeLevelCameraSetup()
+    public static void SetOrthographicSize(int size)
     {
-        Camera.main.orthographicSize = LargeLevelSize;
-    }
-
-    public static void SmallLevelCameraSetup()
-    {
-        Camera.main.orthographicSize = SmallLevelSize;
+        Camera.main.orthographicSize = size;
     }
 }
