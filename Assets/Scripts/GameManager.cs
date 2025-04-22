@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject PlayerPrefab;
     public List<Level> Levels = new List<Level>();
+    public GameObject FinishLevelPanel;
     public UnityEvent OnLevelFinished;
 
     private int m_CurrentLevel = 0;
@@ -32,8 +33,20 @@ public class GameManager : MonoBehaviour
     {
         LoadGame();
         OnLevelFinished.AddListener(SaveGame);
-        OnLevelFinished.AddListener(m_SoundManager.LevelCompleted);
+        OnLevelFinished.AddListener(EnableFinishLevelPanel);
         InitialLevel(m_CurrentLevel);
+    }
+
+    private void EnableFinishLevelPanel()
+    {
+        StartCoroutine(SetActiveFinishLevelPanel(0.2f));
+    }
+
+    IEnumerator SetActiveFinishLevelPanel(float time)
+    {
+        yield return new WaitForSeconds(time);
+        FinishLevelPanel.SetActive(true);
+        m_SoundManager.LevelCompleted();
     }
 
     private void InitialLevel(int index)
