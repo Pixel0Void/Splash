@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         if (transform.position == m_TargetPosition - m_Direction)
         {
             m_SoundManager.Triggered();
-            m_GameManager.TouchInput.RestValues();
+            m_GameManager.TouchInput.ResetValues();
             return true;
         }
         return false;

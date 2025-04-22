@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
         Destroy(m_PlayerClone);
         Destroy(m_LevelClone);
         InitialLevel(CurrentLevel);
+        TouchInput.ResetValues();
     }
 
     private void SaveGame()
