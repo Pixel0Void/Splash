@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private float m_Speed = 20f;
     private Material m_PlayerMat;
     private List<Transform> m_WalkedTiles = new List<Transform>();
-    private bool m_IsLevelFinished = false;
 
     private GameManager m_GameManager;
     private SoundManager m_SoundManager;
@@ -95,15 +94,7 @@ public class PlayerController : MonoBehaviour
             {
                 m_WalkedTiles.Add(other.transform);
                 other.GetComponent<MeshRenderer>().material = m_PlayerMat;
-            }
-
-            if (!m_IsLevelFinished)
-            {
-                m_IsLevelFinished = LevelFinished();
-                if (m_IsLevelFinished)
-                {
-                    Debug.Log("LevelFinished");
-                }
+                LevelFinished();
             }
         }
     }
