@@ -18,13 +18,21 @@ public class GameManager : MonoBehaviour
     private PlayerController m_PlayerController;
     private GameObject m_LevelClone;
 
+    private SoundManager m_SoundManager;
+
     private List<Transform> m_LevelTiles = new List<Transform>();
     public static int TilesCount { get; private set; }
+
+    private void Awake()
+    {
+        m_SoundManager = GetComponent<SoundManager>();
+    }
 
     private void Start()
     {
         LoadGame();
         OnLevelFinished.AddListener(SaveGame);
+        OnLevelFinished.AddListener(m_SoundManager.LevelCompleted);
         InitialLevel(m_CurrentLevel);
     }
 
