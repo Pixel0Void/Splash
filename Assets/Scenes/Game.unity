@@ -425,162 +425,162 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputType: 0
+  TouchInput: {fileID: 1487196882}
+  KeyboardInput: {fileID: 743990794}
   PlayerPrefab: {fileID: 5236133712909376609, guid: 626a6363443123349bf8e758d956d490,
     type: 3}
   Levels:
   - LevelObject: {fileID: 8680073219510596396, guid: 0a008d5404f1fb049af6a5002ea0dc62,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 4
   - LevelObject: {fileID: 2629285343578661303, guid: 21f2f8e4bcfa6354b8dff38a127c2aab,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 4
   - LevelObject: {fileID: 1275060120396959460, guid: 801ae9fbfda608d4ea3ba52a0db62026,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 4
   - LevelObject: {fileID: 1261914955435716176, guid: eb3252e67e8308246aaf40f50581d60d,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 4
   - LevelObject: {fileID: 5918693644856915192, guid: 25ae55334d1d7dd40b5ee0631a07f99a,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 6751640608115152099, guid: 5332a6b88cfa4e14fa522dd9718acc36,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 4973870864229161503, guid: bf5041479972b9e409df45d71dc8ce64,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 7427972693596051618, guid: a329cbefa27fef448beb8e43e9f44eed,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 4
   - LevelObject: {fileID: 8125378967332214293, guid: e297375f1c0c8e748a8eee0ce0a8cb72,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 1009064368568724459, guid: c2dcb3ed04260424f856b1857e432185,
       type: 3}
-    IsBig: 1
+    OrthographicSize: 16
   - LevelObject: {fileID: 6504805671945221976, guid: df6badc1ab54f83448768e8f42d152c4,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 6088005779994946334, guid: d995ccd68ec26374ab9c0ce15229f9c3,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 4
   - LevelObject: {fileID: 3478730652123081258, guid: b5bda412134d70149a03159e0c62441a,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 3008370991969921538, guid: 5aebff5b494c1284ebeac6323d334688,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 9196455719517219608, guid: a9591606bdc8689459e57fb3a004461f,
       type: 3}
-    IsBig: 1
+    OrthographicSize: 15
   - LevelObject: {fileID: 4501476455684786966, guid: f31a8805e1f9eae4187e8edccb6e6e0f,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 5420547647481561163, guid: 5149ec1be14d37e4586d8c4cab247554,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 4348506288509773399, guid: 92f6e01aa8aacb14c8c2e8249ac418f1,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 2344119265498271354, guid: 9856b3316610c5a4b819d166ce5c364b,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 4039909256230639389, guid: 851b8981253667f4d95c76b07ad38a7d,
       type: 3}
-    IsBig: 1
+    OrthographicSize: 15
   - LevelObject: {fileID: 1423667020651461650, guid: ec64227997ccab94180f96fe3de18a7a,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 3220478083958667887, guid: 985d38b1ff7e58a4e86b87c3b21e1e3b,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 934534542127482757, guid: e4c33f92b4617c64b90bfd49ae1a5f20,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 261397378023659032, guid: 2b0a35e1b2266fb4889e605a679d4237,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 8129769443483436592, guid: 1d78c423b653faf499f2024feee2bb27,
       type: 3}
-    IsBig: 1
+    OrthographicSize: 15
   - LevelObject: {fileID: 4247916717745526056, guid: 27558c6768702e648afbea70982bba46,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 4715600040783264950, guid: 40e22825744548142a5631bead3a35e3,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 8238756827765239711, guid: cfa4c9f58af6d3d4d8e149e25de76ce9,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 4486043536227707872, guid: a3656d9c5577c734fa0e0c0147d1e3c7,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 275438532979649416, guid: 2da6bf8c07a70f84390ca1f94bedcad9,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 3006190677755205046, guid: 79aebca1cde3a4e4db8f4606072bdb68,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 1630088974413119817, guid: 48626e48a7cbcf942a929e9180f302b6,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 4
   - LevelObject: {fileID: 3375310467659928182, guid: 5d32fffdccdda154c850ed6111a0ad3a,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 4585245327414833568, guid: 84f0e6087628bfe45b2892eace480d12,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 4
   - LevelObject: {fileID: 7849444503128345686, guid: b9c92ea8ce492514f9eba09379ccfc3a,
       type: 3}
-    IsBig: 1
+    OrthographicSize: 15
   - LevelObject: {fileID: 4775969255419688474, guid: 418a99a4eac59d24ea24f1f266af3a3a,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 739676823416653872, guid: 5929ca777424a3947a3a7672c7c50e55,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 5950581893659975487, guid: 26af24f6f0dc97d4d9fa6b4fee1d55a9,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 9187775821429369755, guid: caa34e61a0c66f1499ed35df4d687ba6,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 8138060638731640980, guid: fea3374f9d6590a48a600b044fe6ee74,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 660868708583194213, guid: aa0b34ce463cea34980b14c762d75466,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 7988891639518500887, guid: f4fc810f45ad3c0458f6a4416f12308c,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 7422731586239057995, guid: 703fb8b4dc2799148b8e3f89aa7af5b2,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 1298944870680699720, guid: 1994f9866ac52d24dae95d81117a0251,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 7586924870677738236, guid: fed9905bce9daf640928416032bdb6de,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 5
   - LevelObject: {fileID: 4442100466024279992, guid: 82b91165a01254b4f9d9be1c1c740a7e,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 8165402864333031313, guid: dcca4100184503849a702901c8470036,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 4749647479759585047, guid: 79fd80841fd422a44873d9e8869c415d,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   - LevelObject: {fileID: 2130971912276881717, guid: 9aade34a9e23bd046b1d5a88738981b2,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 6
   - LevelObject: {fileID: 4433434466874687551, guid: 5af6bc404e659e8408e76daf2e976b7b,
       type: 3}
-    IsBig: 0
+    OrthographicSize: 7
   FinishLevelPanel: {fileID: 1848010104}
-  TouchInput: {fileID: 1487196882}
-  KeyboardInput: {fileID: 743990794}
   OnLevelFinished:
     m_PersistentCalls:
       m_Calls: []

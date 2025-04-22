@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class TouchInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IInputHandler
@@ -18,10 +16,11 @@ public class TouchInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,
     public void OnPointerUp(PointerEventData eventData)
     {
         m_EndPosition = eventData.position;
-        CalculateDirection();
+        if (m_StartPosition != m_EndPosition)
+            CalculateDirection();
     }
 
-    public void RestValues()
+    public void ResetValues()
     {
         m_Direction = Vector3.zero;
     }
