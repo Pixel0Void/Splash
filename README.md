@@ -10,7 +10,7 @@ This project is a non-commercial, fan-made clone to explore Unity development, g
 
 ## 📸 Gameplay Preview
 
-![Gameplay](ُScreenshots/GamePlay.jpg)
+![Gameplay](Screenshots/GamePlay.jpg)
 
 ## 🚀 Getting Started
 
